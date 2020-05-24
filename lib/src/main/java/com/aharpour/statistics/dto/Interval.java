@@ -8,4 +8,8 @@ import lombok.Data;
 public class Interval {
     private double start;
     private double end;
+
+    public boolean contains(double value) {
+        return start <= value && end >= value;
+    }
 }

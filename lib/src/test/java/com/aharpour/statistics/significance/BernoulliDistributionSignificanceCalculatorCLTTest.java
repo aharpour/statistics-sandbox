@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BernoulliDistributionSignificanceCalculatorCLTTest {
 
-    private BernoulliDistributionSignificanceCalculator calculator = new BernoulliDistributionSignificanceCalculatorCLT();
+    private final SignificanceCalculator calculator = new BernoulliDistributionSignificanceCalculatorCLT();
 
     @Test
     void calculateConfidenceLevel() {
