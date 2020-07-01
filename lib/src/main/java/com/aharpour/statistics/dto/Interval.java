@@ -12,4 +12,8 @@ public class Interval {
     public boolean contains(double value) {
         return start <= value && end >= value;
     }
+
+    public boolean overlap(Interval other) {
+        return contains(other.start) || contains(other.end) || other.contains(start) || other.contains(end);
+    }
 }
