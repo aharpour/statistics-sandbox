@@ -1,10 +1,10 @@
-package com.aharpour.statistics.significance;
+package com.aharpour.statistics.confidence;
 
 import com.aharpour.statistics.dto.Interval;
 
 import static java.lang.Math.*;
 
-public class BernoulliDistributionSignificanceCalculatorHoeffding implements SignificanceCalculator {
+public class BernoulliDistributionConfidenceIntervalCalculatorHoeffding implements ConfidenceIntervalCalculator {
 
     @Override
     public double calculateConfidenceLevel(int sampleSize, double sampleMean, double comparingTo) {

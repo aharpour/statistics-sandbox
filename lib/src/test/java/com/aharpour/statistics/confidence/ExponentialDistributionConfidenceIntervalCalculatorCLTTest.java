@@ -1,4 +1,4 @@
-package com.aharpour.statistics.significance;
+package com.aharpour.statistics.confidence;
 
 import com.aharpour.statistics.dto.Interval;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
@@ -8,9 +8,9 @@ import java.util.stream.DoubleStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ExponentialDistributionSignificanceCalculatorCLTTest {
+class ExponentialDistributionConfidenceIntervalCalculatorCLTTest {
 
-    private final SignificanceCalculator calculator = new ExponentialDistributionSignificanceCalculatorCLT();
+    private final ConfidenceIntervalCalculator calculator = new ExponentialDistributionConfidenceIntervalCalculatorCLT();
 
 
     @Test

@@ -1,11 +1,11 @@
-package com.aharpour.statistics.significance;
+package com.aharpour.statistics.confidence;
 
 import com.aharpour.statistics.dto.Interval;
 import com.aharpour.statistics.fundamentals.TAlphaOverTwoNCalculator;
 
 import static java.lang.Math.sqrt;
 
-public class GaussianDistributionSignificanceCalculator {
+public class GaussianDistributionConfidenceIntervalCalculator {
 
     private final TAlphaOverTwoNCalculator tFunction = new TAlphaOverTwoNCalculator();
 

@@ -1,4 +1,4 @@
-package com.aharpour.statistics.significance;
+package com.aharpour.statistics.confidence;
 
 import com.aharpour.statistics.dto.Interval;
 import org.junit.jupiter.api.Test;
@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class GaussianDistributionSignificanceCalculatorTest {
+class GaussianDistributionConfidenceIntervalCalculatorTest {
 
-    private final GaussianDistributionSignificanceCalculator calculator = new GaussianDistributionSignificanceCalculator();
+    private final GaussianDistributionConfidenceIntervalCalculator calculator = new GaussianDistributionConfidenceIntervalCalculator();
 
     @Test
     void calculateConfidenceInterval() {

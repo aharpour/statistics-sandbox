@@ -1,13 +1,13 @@
-package com.aharpour.statistics.significance;
+package com.aharpour.statistics.confidence;
 
 import com.aharpour.statistics.dto.Interval;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BernoulliDistributionSignificanceCalculatorHoeffdingTest {
+class BernoulliDistributionConfidenceIntervalCalculatorHoeffdingTest {
 
-    private final SignificanceCalculator calculator = new BernoulliDistributionSignificanceCalculatorHoeffding();
+    private final ConfidenceIntervalCalculator calculator = new BernoulliDistributionConfidenceIntervalCalculatorHoeffding();
 
     @Test
     void calculateConfidenceLevel() {
