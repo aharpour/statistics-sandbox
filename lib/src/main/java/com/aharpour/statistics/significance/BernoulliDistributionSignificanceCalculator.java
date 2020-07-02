@@ -5,8 +5,11 @@ import com.aharpour.statistics.confidence.BernoulliDistributionConfidenceInterva
 import com.aharpour.statistics.confidence.ConfidenceIntervalCalculator;
 import com.aharpour.statistics.dto.Interval;
 
+import static java.lang.Math.*;
+
 public class BernoulliDistributionSignificanceCalculator {
 
+    public static final int NUMBER_OF_ROUNDS = 23;
     private final ConfidenceIntervalCalculator clt = new BernoulliDistributionConfidenceIntervalCalculatorCLT();
     private final ConfidenceIntervalCalculator hoeffding = new BernoulliDistributionConfidenceIntervalCalculatorHoeffding();
 
@@ -16,7 +19,7 @@ public class BernoulliDistributionSignificanceCalculator {
         double stepSize = 0.25;
         double testConfidenceLevel = 0.5;
         double confidenceLevel = 0.0;
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             Interval intervalA = getConfidenceInterval(sampleASize, sampleAMean, testConfidenceLevel);
             Interval intervalB = getConfidenceInterval(sampleBSize, sampleBMean, testConfidenceLevel);
 
@@ -28,7 +31,14 @@ public class BernoulliDistributionSignificanceCalculator {
             }
             stepSize = stepSize / 2;
         }
-        return confidenceLevel;
+        int numberOfSignificantDigits = (int) round(floor(-log10(1.0 / pow(2, NUMBER_OF_ROUNDS + 1))));
+
+        return roundToNDigits(confidenceLevel, numberOfSignificantDigits) ;
+    }
+
+    private double roundToNDigits(double value, int numberOfSignificantDigits) {
+        double factor = pow(10, numberOfSignificantDigits);
+        return ((double) round(value * factor)) / factor;
     }
 
     private Interval getConfidenceInterval(int sampleSize, double sampleMean, double confidenceLevel) {
