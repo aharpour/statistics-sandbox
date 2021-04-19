@@ -10,11 +10,11 @@ public class BirthdayProblem {
     private final BigDecimal result;
 
 
-    public BirthdayProblem(int numberOfCases, int numberOfDraws) {
+    public BirthdayProblem(long numberOfCases, int numberOfDraws) {
         result = calculate(numberOfCases, numberOfDraws);
     }
 
-    private BigDecimal calculate(int numberOfCases, int numberOfDraws) {
+    private BigDecimal calculate(long numberOfCases, int numberOfDraws) {
         BigDecimal possibilityOfUniqueDraw = BigDecimal.valueOf(1.0);
         for (int i = 0; i < numberOfDraws; i++) {
             BigDecimal divide = new BigDecimal(numberOfCases - i, DECIMAL128).divide(new BigDecimal(numberOfCases, DECIMAL128), DECIMAL128);

@@ -10,7 +10,7 @@ class BirthdayProblemTest {
 
     @Test
     void classicCase() {
-        BigDecimal result = new BirthdayProblem(365, 23).getResult();
+        BigDecimal result = new BirthdayProblem(365L, 23).getResult();
         assertEquals(0.507297, result.doubleValue(), 0.000001);
     }
 
